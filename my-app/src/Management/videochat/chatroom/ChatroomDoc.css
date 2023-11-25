@@ -1,0 +1,316 @@
+
+
+
+
+
+
+
+
+.chtroom-main{
+
+    width: 100%;
+    height: 110vh;
+    background-color: rgb(19, 19, 19);
+    padding-top: 20px;
+    
+}
+
+.chtroom-title{
+
+    text-align: center;
+    color: white;
+}
+
+
+.chtroom-text-1{
+
+      color: white;
+      margin-left: 20px;
+}
+
+
+.chtroom-id{
+
+      color: red;
+}
+
+.chtroom-video-main{
+
+      width: 100%;
+      height: 600px;
+      /* background-color: aqua; */
+      padding-top: 20px;
+      padding-left: 30px;
+      display: flex;
+      
+
+}
+
+.chatroom-my-main{
+
+     width: 300px;
+     height: 500px;
+     /* background-color: blueviolet; */
+}
+
+.chtromm-my-box{
+
+      width: 200px;
+      height: 200px;
+      /* background-color: antiquewhite; */
+      margin-top: 150px;
+      
+}
+
+.chatroom-my-control{
+
+     width: 100%;
+     height: 50px;
+     margin-top: 20px;
+     /* border: 1px solid white; */
+     border-radius: 10px;
+}
+
+.chtromm-doctor-box{
+
+      width: 400px;
+      height: 450px;
+     
+      margin-left: 230px;
+}
+
+.chatroom-end-call{
+
+    margin-left: 20px;
+    margin-top: 10px;
+    border: none;
+    width: 100px;
+    background-color: red;
+    color:white;
+    border-radius: 10px;
+
+}
+
+.chatroom-video-icon{
+
+    font-size: 20px;
+    margin-left: 20px;
+    color: white;
+}
+
+.chatroom-mic-icon{
+
+    font-size: 20px;
+    margin-left: 20px;
+    color: white;
+
+
+}
+
+.chatroom-chatbox{
+
+    width: 400px;
+    height: 450px;
+    background-color: rgb(174, 154, 242);
+    margin-left: 150px;
+    margin-top: 50px;
+    border-radius: 10px;
+
+
+}
+
+.chtroom-chatbox-title{
+
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+
+    
+}
+
+.chtbox-msg-div{
+
+       width: 100%;
+       height: 300px;
+       /* background-color: aliceblue; */
+       display: flex;
+       
+}
+
+.chat-box-msg-input-div{
+
+     width: 100%;
+     height: 50px;
+    
+    
+}
+
+.chatbox-input{
+
+    width: 300px;
+    height: 35px;
+    margin-left: 30px;
+    
+
+}
+
+.chatbox-send-icon{
+
+      margin-left: 20px;
+      font-size: 25px;
+      color: rgb(1, 82, 1);
+}
+
+.my-msg-div{
+
+    width: 100px;
+    min-height: 30px;
+    border-radius: 10px;
+    background-color: rgb(17, 0, 255);
+    margin-left:80px;
+    margin-bottom: 10px;
+    color: white;
+    
+}
+
+
+.doc-msg-div{
+
+    width: 100px;
+   min-height: 30px;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    margin-left: 20px;
+
+
+}
+
+.chtbox-main{
+
+   width: 100%;
+    height: 300px;
+    /* background-color:antiquewhite; */
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+    
+
+
+}
+
+.msg-box-user{
+
+    width: 100px;
+    min-height: 30px;
+     background-color: white;
+    border-radius: 10px;
+     margin-top: 10px;
+     margin-left: 10px;
+     overflow-wrap: break-word;
+
+
+}
+
+#myid-doc{
+
+    width: 100px;
+   min-height: 30px;
+    overflow-wrap: break-word;
+    background-color: rgb(4, 4, 59);
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 280px;
+    
+    
+}
+
+#use{
+
+  width: 100px;
+   min-height: 30px;
+    overflow-wrap: break-word;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+
+
+}
+
+
+.msg-box-my-page-doc{
+
+    width: 100px;
+   min-height: 30px;
+    background-color: rgb(3, 3, 71);
+    border-radius: 10px;
+   margin-left: 280px;
+    margin-top: 10px;
+    overflow-wrap: break-word;
+
+
+}
+
+.msg{
+
+      text-align: center;
+}
+
+
+
+
+
+
+
+
+
+.chtbox-msg{
+
+    text-align: center;
+}
+
+
+.chtbox-my-msg-div{
+
+    width: 50%;
+    height: 100%;
+    /* background-color: aqua; */
+}
+
+.chtbox-doc-msg-div{
+
+    width: 50%;
+    height: 100%;
+    /* background-color: rgb(0, 255, 136); */
+
+
+}
+
+.chtroom-con-name{
+
+    color: white;
+}
+
+.chtroom-con-data{
+
+    color: red;
+}
+
+
+.chtroom-session_btn{
+
+
+    width:150px;
+    height: 35px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-left: 30px;
+
+
+
+          
+}

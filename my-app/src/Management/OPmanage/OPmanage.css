@@ -1,0 +1,241 @@
+
+
+.mang-home-iner-main {
+
+    width: 100%;
+    height: 100vh;
+
+}
+
+.mang-op-drop{
+
+    position: absolute;
+    right:20px;
+    top: 100px;
+
+
+}
+
+.popup{
+
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    margin-top: 200px;
+}
+
+.mang-op-refr-text{
+
+     font-size: 15px;
+     font-weight: bold;
+     color: blue;
+     margin-left: 20px;
+     margin-top: 10px;
+    
+}
+
+.mang-op-refr-icon{
+
+     color: red;
+}
+
+.mang-op-refr-main{
+
+     cursor: pointer;
+}
+
+.mang-op-search-main{
+
+     width: 100%;
+     height: 50px;
+     
+     margin-top: 20px;
+     display: flex;
+    align-items: center;
+   
+}
+
+.mang-op-search-input{
+
+    width: 700px;
+    height: 40px;
+    margin-left: 150px;
+    border-radius: 10px;
+    text-align:center;
+
+}
+
+.mang-op-serch-btn{
+
+
+    border: none;
+    width: 50px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-left: 2px;
+    background-color: brown;
+    color: white;
+    
+}
+
+.mang-op-newbox-main{
+
+    width: 300px;
+    height: 500px;
+    background-color:rgb(79, 111, 82);
+    margin-top: 100px;
+    margin-left: 20px;
+    border-radius: 10px;
+    overflow: scroll;
+    overflow-x: hidden;
+
+
+}
+
+.mang-op-new-title{
+
+     font-size: 18px;
+     text-align: center;
+     color: white;
+     background-color: rgb(84, 31, 12);
+     
+}
+
+
+.mang-op-data-box{
+
+    width: 150px;
+    height: 50px;
+    background-color:white;
+   margin-left: 50px;
+   border-radius: 10px;
+   margin-bottom: 15px;
+   padding-left: 30px; 
+   cursor: pointer;
+    
+}
+
+.mange-op-ptname{
+
+     margin-bottom: 0;
+     text-align: center;
+     color: blue;
+}
+
+.mange-op-check{
+
+    margin-left: 20px;
+    height: 15px;
+    width: 15px;
+}
+
+
+.mang-spinner{
+
+     margin-top: 150px;
+
+     margin-left: 110px;
+}
+
+
+.mang-op-empty{
+
+      color: white;
+      margin-top: 150px;
+      margin-left: 80px;
+}
+
+.mange-op-view{
+
+      width:600px;
+      height: 500px;
+      border: 1px solid black;
+      background-color: white;
+      position: absolute;
+      top:250px;
+      left: 700px;
+
+}
+
+.mange-op-view-title{
+
+      text-align: center;
+      font-size: 25px;
+      background-color: rgb(62, 62, 200);
+      color: white;
+}
+
+.op-view-mainbox{
+
+    width: 100%;
+    height: 400px;
+   padding-top: 60px;
+    display: flex;
+    
+      
+}
+
+.res-data{
+
+    margin-left:200px;
+}
+
+.op-view-hed-box{
+
+width: 300px;
+height: 100%;
+
+padding-left: 60px;
+
+       
+}
+
+.op-view-res-box{
+
+    width: 300px;
+    height:100%;
+    padding-left: 50px;
+}
+
+
+.pyment-span{
+     
+    font-weight: bold;
+}
+
+
+.mange-op-close-icon{
+
+      position: relative;
+      left:570px;
+      bottom: 50px;
+      font-size: 25px;
+      color: rgb(255, 0, 0);
+
+}
+
+.mange-mark-icon{
+
+      margin-left: 20px;
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: red;
+      background-color: rgb(226, 226, 241);
+    
+    }
+
+    .mange-de-icon{
+
+        margin-left: 40px;
+        color: red;
+    }
+
+
+
+
+
+
+
+
+
