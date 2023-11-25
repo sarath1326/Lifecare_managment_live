@@ -10,7 +10,7 @@ function Sidebar() {
 
             <div className='mang-side-main'>
 
-                <div className='mang-side-opt-box'  onClick={()=>{navigate("/homemange")}}  >
+                <div className='mang-side-opt-box'  onClick={()=>{navigate("/")}}  >
 
                     <p className='mang-side-opt-text'> Home   </p>
 
@@ -21,7 +21,7 @@ function Sidebar() {
 
                 <div className='mang-side-opt-box' onClick={()=>{navigate("/opmange")}}  >
 
-                    <p className='mang-side-opt-text'> OP Booking </p>
+                    <p className='mang-side-opt-text'> OP Booking Managment </p>
 
                 </div>
 
@@ -36,7 +36,7 @@ function Sidebar() {
 
                 <div className='mang-side-opt-box'>
 
-                    <p className='mang-side-opt-text'> OP Booking Managment    </p>
+                    <p className='mang-side-opt-text'>     </p>
 
 
 

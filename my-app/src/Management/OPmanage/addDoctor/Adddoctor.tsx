@@ -8,14 +8,13 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useState, useEffect } from 'react';
 import axios from "../../../Constant/Axiospage"
 import { message } from "antd"
+import Navbar_mang from '../../Navbar/Navbar_mang';
+import Sidebar from '../../Sidebar/Sidebar';
 
 
-type propstype = {
 
-    func: () => void
-}
 
-function Adddoctor(props: propstype) {
+function Adddoctor() {
 
 
     type datatype = [{
@@ -152,9 +151,22 @@ function Adddoctor(props: propstype) {
         <div>
 
 
+            <Navbar_mang />
+
+            <hr/>
+
+            <div className='pop-main' >
+
+                <Sidebar />
+
+              
+
+
+
+
             <div className='pop-new-dep'>
 
-                <button className='pop-new-dep-closbtn' onClick={() => { props.func() }}>  <AiOutlineClose />  </button>
+               
 
 
                 <h5 className='adddoc-title'> Add Doctor </h5>
@@ -275,7 +287,7 @@ function Adddoctor(props: propstype) {
 
 
 
-
+          </div>
 
 
         </div>

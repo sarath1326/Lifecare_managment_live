@@ -5,13 +5,17 @@ import "./New_dep.css"
 import { AiOutlineClose } from "react-icons/ai";
 import { useFormik } from 'formik';
 import axios from "../../Constant/Axiospage" ;
+import Navbar_mang from '../Navbar/Navbar_mang';
+import Sidebar from '../Sidebar/Sidebar';
+import { useNavigate } from 'react-router-dom';
+import {message} from "antd"
 
 
-type propstype={
-    data:()=>void
-}
 
-function New_dep(props:propstype) {
+
+function New_dep(){
+
+
 
     type inputvalues={
 
@@ -21,6 +25,8 @@ function New_dep(props:propstype) {
         time:string
         fees:string
     }
+
+    const navigate=useNavigate()
 
     const  initialValues:inputvalues={
         
@@ -40,14 +46,15 @@ function New_dep(props:propstype) {
 
                axios.post("/manage/opnewdata",values).then(()=>{
 
-                   
+                   navigate("/opmange")
 
                }).catch(err=>{
-
-                   console.log("err")
+                
+                  message.error("somthing worng !")
+                   
                })
            
-            props.data()
+          
 
         }
         
@@ -66,10 +73,17 @@ function New_dep(props:propstype) {
   return (
     <div>
 
+        <Navbar_mang />
+        <hr/>
+
+        <div className='pop-main' >  
+
+        <Sidebar />
+
 
        <div className='pop-new-dep'>
 
-        <button  className='pop-new-dep-closbtn' onClick={()=>{props.data()}}>  <AiOutlineClose />  </button>
+        
 
         <h4 className='pop-new-dep-title'> Add New Department</h4>
 
@@ -158,7 +172,7 @@ function New_dep(props:propstype) {
 
        </div>
 
-        
+        </div>
       
     </div>
   )

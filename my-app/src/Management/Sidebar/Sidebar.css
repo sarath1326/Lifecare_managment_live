@@ -27,6 +27,11 @@
 
 }
 
+.mang-side-opt-box:hover{
+
+    box-shadow: 0 0 5px #dfdbdb;
+}
+
 .mang-side-opt-text{
 
     text-align: center;

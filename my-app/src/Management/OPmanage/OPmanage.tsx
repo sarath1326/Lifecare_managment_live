@@ -16,6 +16,7 @@ import axios from "../../Constant/Axiospage";
 import { Oval } from 'react-loader-spinner'
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { message } from "antd"
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -49,7 +50,7 @@ function OPmanage() {
     }
 
 
-
+const navigate=useNavigate()
 
 
     const [pop, setpop] = useState<boolean>(false);
@@ -182,25 +183,15 @@ function OPmanage() {
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
     return (
         <div>
 
             <Navbar_mang />
 
+            <hr/>
+            
+            
             <div className='mang-home-main'>
 
                 <Sidebar />
@@ -209,43 +200,17 @@ function OPmanage() {
 
                     <Dropdown className='mang-op-drop'>
                         <Dropdown.Toggle variant="success" id="dropdown-basic">
-                            OP Booking Manage
+                            Settings
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1" onClick={() => { setpop(true) }}  > Add new Department </Dropdown.Item>
+                            <Dropdown.Item href="#/action-1" onClick={() => { navigate("/newdep")  }}  > Add new Department </Dropdown.Item>
                             <Dropdown.Item href="#/action-2">Edit data</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3" onClick={() => { setaddDoctor(true) }}    >Add Doctor</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3" onClick={() => { navigate("/addDoctor") }}    >Add Doctor</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
-
-
-
-                    {
-
-                        pop ?
-
-                            <New_dep data={() => { setpop(false) }} />
-
-                            : null
-
-
-                    }
-
-
-                    {
-
-                        addDoctor ?
-
-                            <Adddoctor func={() => { setaddDoctor(false) }} />
-
-                            : null
-
-
-                    }
-
-
-
+                    
+                    
                     <div className='mang-op-refr-main' onClick={refresh}   >
 
                         <span className='mang-op-refr-text'> Refresh</span>
@@ -477,38 +442,22 @@ function OPmanage() {
 
 
 
+              </div>
 
+              
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </div>
+              
 
 
             </div>
 
+           
 
 
 
+            </div>
 
-
-
-
-
-
-        </div>
+            
     )
 }
 

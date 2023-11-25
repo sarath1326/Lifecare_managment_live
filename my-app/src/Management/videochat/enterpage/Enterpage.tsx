@@ -86,10 +86,17 @@ const answerCall=(id:string)=>{
      
 
       <Navbar_mang />
+      <hr/>
+      
 
       <div className='enterroom-main'>
 
         <Sidebar />
+
+        <div>
+
+           
+        </div>
 
 
        <div className='enterpage-sid-main'>
