@@ -9,7 +9,8 @@ import OPmanage from './Management/OPmanage/OPmanage';
 import Enterpage from './Management/videochat/enterpage/Enterpage';
 import ChatroomDoc from './Management/videochat/chatroom/ChatroomDoc';
 import New_dep from './Management/OPmanage/New_dep';
-import Adddoctor from './Management/OPmanage/addDoctor/Adddoctor';
+import Adddoctor from "./Management/Doctors/Doctors"
+import Doctors from './Management/Doctors/Doctors';
 
 
 
@@ -38,6 +39,8 @@ function App() {
       <Route element={<New_dep />} path='/newdep' />
 
       <Route element={<Adddoctor />} path='/addDoctor' />
+
+      <Route element={<Doctors />} path='/doctors' />
 
 
 

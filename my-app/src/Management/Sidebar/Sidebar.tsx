@@ -50,6 +50,8 @@ function Sidebar() {
 
                 <div className='mang-side-opt-box'>
 
+                <p className='mang-side-opt-text' onClick={()=>{navigate("/doctors")}} >  Doctors </p>
+
                 </div>
 
                 <div className='mang-side-opt-box'>

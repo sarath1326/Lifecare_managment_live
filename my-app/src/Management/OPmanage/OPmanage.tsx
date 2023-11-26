@@ -7,7 +7,6 @@ import Sidebar from "../Sidebar/Sidebar"
 import Dropdown from 'react-bootstrap/Dropdown';
 import New_dep from './New_dep';
 import { useState, useEffect } from 'react';
-import Adddoctor from './addDoctor/Adddoctor';
 import { FiRefreshCcw } from "react-icons/fi";
 import { AiOutlineCheck} from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
