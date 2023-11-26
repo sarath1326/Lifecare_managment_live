@@ -13,7 +13,7 @@ export const SocketContext:React.Context<any>=createContext(null)
 
 export const SocketProvider=(props:any)=>{
 
-    const Socket=useMemo(()=>io("http://localhost:8000"),[])
+    const Socket=useMemo(()=>io("https://lifecarebackend-439a.onrender.com"),[])
 
 
           return(
