@@ -90,7 +90,10 @@ const Doctors = () => {
               alert(result.pin)
 
                     
-             }
+             }else{
+
+                message.error("server err")
+             } 
 
 
     }).catch(err => {
