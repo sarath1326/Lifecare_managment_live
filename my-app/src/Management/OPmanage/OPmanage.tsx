@@ -8,7 +8,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import New_dep from './New_dep';
 import { useState, useEffect } from 'react';
 import { FiRefreshCcw } from "react-icons/fi";
-import { AiOutlineCheck} from "react-icons/ai";
+import { AiOutlineCheck } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
 import { ImCross } from "react-icons/im";
 import axios from "../../Constant/Axiospage";
@@ -42,14 +42,14 @@ function OPmanage() {
         marking: Boolean
         bookingid: number
         paystatus: string
-        cancel:boolean
+        cancel: boolean
 
 
 
     }
 
 
-const navigate=useNavigate()
+    const navigate = useNavigate()
 
 
     const [pop, setpop] = useState<boolean>(false);
@@ -60,7 +60,7 @@ const navigate=useNavigate()
     const [viewbox, setviewbox] = useState<boolean>(false)
     const [single, setsingle] = useState<fetchdataType>()
     const [input, setinput] = useState<number>()
-    const [color,setcolor]=useState<string>("1px solid red")
+    const [color, setcolor] = useState<string>("1px solid red")
 
 
 
@@ -135,7 +135,7 @@ const navigate=useNavigate()
 
     const searchbtn = () => {
 
-        const res = getdata.find((obj) =>obj.bookingid===input  ||  obj.mobile.includes(input)  )
+        const res = getdata.find((obj) => obj.bookingid === input || obj.mobile.includes(input))
 
         if (res) {
 
@@ -147,7 +147,7 @@ const navigate=useNavigate()
         } else {
 
             message.error("No Result Found ")
-            
+
         }
     }
 
@@ -156,41 +156,50 @@ const navigate=useNavigate()
     const marking = (id: number, index: number) => {
 
 
-        axios.post("/manage/opmarking",{data:id}).then((respo)=>{
+        axios.post("/manage/opmarking", { data: id }).then((respo) => {
 
-            const result=respo.data 
+            const result = respo.data
 
-            if(result.flag){
+            if (result.flag) {
 
                 getdata.splice(index, 1)
                 setgetdata([...getdata])
-         
 
-            }else{
+
+            } else {
 
                 message.error("server err")
             }
 
-              
-        }).catch(err=>{
+
+        }).catch(err => {
 
             message.error("somthing worng...try again ")
         })
 
 
-       
+
+
+
 
 
     }
-    
+
+    const booking_cancel = (id:number, index: number) => {
+
+
+
+
+    }
+
     return (
         <div>
 
             <Navbar_mang />
 
-            <hr/>
-            
-            
+            <hr />
+
+
             <div className='mang-home-main'>
 
                 <Sidebar />
@@ -203,13 +212,13 @@ const navigate=useNavigate()
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1" onClick={() => { navigate("/newdep")  }}  > Add new Department </Dropdown.Item>
+                            <Dropdown.Item href="#/action-1" onClick={() => { navigate("/newdep") }}  > Add new Department </Dropdown.Item>
                             <Dropdown.Item href="#/action-2">Edit data</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3" onClick={() => { navigate("/addDoctor") }}    >Add Doctor</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3" onClick={() => { navigate("/addopdoctor") }}    >Add Doctor</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
-                    
-                    
+
+
                     <div className='mang-op-refr-main' onClick={refresh}   >
 
                         <span className='mang-op-refr-text'> Refresh</span>
@@ -225,7 +234,7 @@ const navigate=useNavigate()
 
                         <input className='mang-op-search-input'
 
-                          placeholder='Booking ID  OR Mobile number Enter and Search '
+                            placeholder='Booking ID  OR Mobile number Enter and Search '
 
                             type='text'
                             onChange={(
@@ -290,31 +299,31 @@ const navigate=useNavigate()
 
                                     getdata.map((obj, index) => (
 
-                                            
 
-                                          obj.marking ?
-                                          
-                                          <div  className='mang-op-data-box'>
 
-                                            <span onClick={() => { bokking_view(obj.bookingid) }} className='mange-op-ptname'> {obj.patientname} </span><br />
-                                            
-                                            <span onClick={() => { bokking_view(obj.bookingid) }} className='mange-op-ptname'> {obj.bookingid} </span>
-                                            {
-                                                obj.cancel ? <ImCross className='mange-de-icon' /> 
-                                                
-                                                : <AiOutlineCheck onClick={()=>{marking(obj.bookingid,index)}} className='mange-mark-icon' />
+                                        obj.marking ?
 
-                                            }
-                                             
-                                            
+                                            <div className='mang-op-data-box'>
+
+                                                <span onClick={() => { bokking_view(obj.bookingid) }} className='mange-op-ptname'> {obj.patientname} </span><br />
+
+                                                <span onClick={() => { bokking_view(obj.bookingid) }} className='mange-op-ptname'> {obj.bookingid} </span>
+                                                {
+                                                    obj.cancel ? <ImCross onClick={() => { booking_cancel(obj.bookingid, index) }} className='mange-de-icon' />
+
+                                                        : <AiOutlineCheck onClick={() => { marking(obj.bookingid, index) }} className='mange-mark-icon' />
+
+                                                }
 
 
 
-                                        </div>
 
-                                        : null
 
-                                      
+                                            </div>
+
+                                            : null
+
+
 
 
 
@@ -368,7 +377,7 @@ const navigate=useNavigate()
 
                                         <span> Mobile NO:    </span><br />
 
-                                        <span> Date: </span><br/>
+                                        <span> Date: </span><br />
 
                                         <span> Doctor Name:    </span><br />
 
@@ -399,7 +408,7 @@ const navigate=useNavigate()
 
                                         <span> {single?.mobile} </span><br />
 
-                                        <span> {single?.date} </span><br/>
+                                        <span> {single?.date} </span><br />
 
                                         <span>{single?.doctername} </span><br />
 
@@ -441,22 +450,22 @@ const navigate=useNavigate()
 
 
 
-              </div>
-
-              
-
-              
+                </div>
 
 
-            </div>
 
-           
 
 
 
             </div>
 
-            
+
+
+
+
+        </div>
+
+
     )
 }
 

@@ -1,7 +1,7 @@
 
 
 
-import { createContext ,useMemo} from "react";
+import { createContext ,useMemo,useState} from "react";
 import {io} from "socket.io-client"
 
 export const SocketContext:React.Context<any>=createContext(null)
@@ -16,11 +16,12 @@ export const SocketContext:React.Context<any>=createContext(null)
 export const SocketProvider=(props:any)=>{
 
     const Socket=useMemo(()=>io("https://lifecarebackend-439a.onrender.com"),[])
+    const [flag,setflag]=useState<boolean>(false)
 
 
           return(
 
-               <SocketContext.Provider  value={{Socket}}>
+               <SocketContext.Provider  value={{Socket,flag,setflag}}>
 
                 {
                      props.children

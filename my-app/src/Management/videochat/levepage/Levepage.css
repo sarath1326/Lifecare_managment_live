@@ -1,0 +1,57 @@
+
+
+
+.leve-main{
+
+     width: 100%;
+     height: 100vh;
+}
+
+
+.leve-inner-main {
+
+        width: 100%;
+        height: 600px;
+        background-color: rgb(182, 233, 233);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.leve-alert{
+
+     width: 500px;
+     height: 300px;
+     background-color: white;
+     box-shadow: 0 0 5px #4a4a4a;
+}
+
+.alert-title{
+
+     text-align: center;
+     font-size: 30px;
+     color: red;
+     font-weight: 500;
+     margin-top: 100px;
+}
+
+.alrt-btn{
+
+     width:100px;
+     height: 35px;
+     margin-left: 200px;
+     margin-top: 50px;
+     border: none;
+     background-color: green;
+     border-radius: 5px;
+
+}
+
+.alert-icon{
+
+    font-size: 20px;
+    color: white;
+}
+
+
+

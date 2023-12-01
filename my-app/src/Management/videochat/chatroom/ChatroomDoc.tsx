@@ -11,6 +11,8 @@ import { SocketContext } from "../../contextApi/Socket"
 import Peer from "simple-peer"
 import Reactplayer from "react-player"
 import { message } from "antd"
+import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 function ChatroomDoc() {
@@ -34,12 +36,15 @@ function ChatroomDoc() {
 
   const [msglist, setmsglist] = useState<msgtype[]>([])
 
+  const connectionRef: any = useRef();
+
 
   const location = useLocation()
+  const navigate=useNavigate()
 
   const { name, roomid } = location.state
 
-  const { Socket } = useContext(SocketContext)
+  const { Socket , setflag } = useContext(SocketContext)
 
 
 
@@ -84,13 +89,15 @@ function ChatroomDoc() {
 
     })
 
+    connectionRef.current = peer;
+
   }
 
   const reseve_msg = (data: any) => {
 
-    console.log("usermsg",data.msg)
+    console.log("usermsg", data.msg)
 
-    
+
 
     const data_use = {
 
@@ -106,6 +113,21 @@ function ChatroomDoc() {
   }
 
 
+  const leve_req_resev = (data: any) => {
+    
+      setflag(true)
+    console.log(" user leve request ")
+   
+    setuserstream(null)
+
+    navigate("/levepage")
+  
+  
+  }
+
+
+
+
 
 
 
@@ -113,6 +135,7 @@ function ChatroomDoc() {
   useEffect(() => {
 
     Socket.on("doctor_msg_receve", reseve_msg)
+    Socket.on("leve_req_user",leve_req_resev)
 
   }, [msglist])
 
@@ -124,6 +147,8 @@ function ChatroomDoc() {
 
       setmystream(res)
     })
+
+    
 
 
   }, [])
@@ -144,6 +169,23 @@ function ChatroomDoc() {
     setmsg('')
 
   }
+
+
+  const call_leve_req_sent=()=>{
+
+          setmystream(null)
+          setflag(true)
+
+          Socket.emit("doctor_sent_leve_req",{to:roomid})
+
+          navigate("/levepage")
+ 
+ 
+        }
+
+
+
+
 
 
 
@@ -190,7 +232,7 @@ function ChatroomDoc() {
 
             <div className='chatroom-my-control'>
 
-              <button className='chatroom-end-call' > End Call </button>
+              <button className='chatroom-end-call'  onClick={call_leve_req_sent}    > End Call </button>
 
 
 

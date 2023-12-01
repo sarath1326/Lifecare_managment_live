@@ -64,12 +64,18 @@ function Enterpage() {
 
   }
 
+  const  handil_user_leve=()=>{
+
+        console.log("user leve req")
+  }
+
 
   // socket useefect
 
   useEffect(() => {
 
     Socket.on("new_call_sent_doctor", handil_new_call)
+    Socket.on("leve_req_user",handil_user_leve)
 
 
   }, [Socket])

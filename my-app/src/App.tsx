@@ -11,6 +11,8 @@ import ChatroomDoc from './Management/videochat/chatroom/ChatroomDoc';
 import New_dep from './Management/OPmanage/New_dep';
 import Adddoctor from "./Management/Doctors/Doctors"
 import Doctors from './Management/Doctors/Doctors';
+import Addopdoctor from './Management/addopDoctor/Addopdoctor';
+import Levepage from './Management/videochat/levepage/Levepage';
 
 
 
@@ -41,6 +43,12 @@ function App() {
       <Route element={<Adddoctor />} path='/addDoctor' />
 
       <Route element={<Doctors />} path='/doctors' />
+
+      <Route element={<Addopdoctor />} path='/addopdoctor' />
+
+      <Route element={<Levepage />} path='/levepage' />
+
+
 
 
 
