@@ -16,6 +16,7 @@ import { Oval } from 'react-loader-spinner'
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { message } from "antd"
 import { useNavigate } from 'react-router-dom';
+import { FaRegClock } from "react-icons/fa";
 
 
 
@@ -43,6 +44,8 @@ function OPmanage() {
         bookingid: number
         paystatus: string
         cancel: boolean
+        reschedule: boolean
+        new: boolean
 
 
 
@@ -185,12 +188,70 @@ function OPmanage() {
 
     }
 
-    const booking_cancel = (id:number, index: number) => {
+    const booking_cancel = (id: number, index: number) => {
 
 
+        axios.post("/manage/bookingcancel", { id }).then((respo) => {
+
+            const result = respo.data
+
+            if (result.flag) {
+
+                message.success("this booking canceld")
+
+                getdata.splice(index, 1)
+
+                setgetdata([...getdata])
+
+
+            } else {
+
+                message.error("server err")
+            }
+
+        }).catch(err => {
+
+
+
+
+        })
 
 
     }
+
+    const resudule_update=(id: number, index: number)=>{
+
+
+           axios.post("/manage/resudule_update",{id:id}).then((respo)=>{
+
+            const result=respo.data
+
+              if(result.flag){
+
+                   message.success("Booking resuduled")
+
+                   getdata.splice(index,1)
+                   setgetdata([...getdata])
+              
+                }else{
+
+                    message.error("server err")
+
+
+              }
+
+                
+           }).catch(err=>{
+
+            message.error("somthing worng ")
+
+               
+           })
+
+          
+    }
+
+   
 
     return (
         <div>
@@ -308,12 +369,36 @@ function OPmanage() {
                                                 <span onClick={() => { bokking_view(obj.bookingid) }} className='mange-op-ptname'> {obj.patientname} </span><br />
 
                                                 <span onClick={() => { bokking_view(obj.bookingid) }} className='mange-op-ptname'> {obj.bookingid} </span>
+
+                                                  {
+                                                     
+                                                     obj.new ?
+
+                                                     <AiOutlineCheck onClick={() => { marking(obj.bookingid, index) }} className='mange-mark-icon' />
+
+                                                     : null
+
+
+                                                  }
+
+
+
+
                                                 {
                                                     obj.cancel ? <ImCross onClick={() => { booking_cancel(obj.bookingid, index) }} className='mange-de-icon' />
 
-                                                        : <AiOutlineCheck onClick={() => { marking(obj.bookingid, index) }} className='mange-mark-icon' />
-
+                                                        : null
                                                 }
+
+                                                {
+
+                                                    obj.reschedule ?
+
+                                                        <FaRegClock className='mange-res-icon' onClick={()=>{resudule_update(obj.bookingid, index)}}     />
+
+                                                        : null
+                                                        
+                                                 }
 
 
 

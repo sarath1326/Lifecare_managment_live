@@ -81,12 +81,12 @@ function Enterpage() {
   }, [Socket])
 
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    Socket.emit("doc_login", { name: "doctor" })
+  //   Socket.emit("doc_login", { name: "doctor" })
 
 
-  }, [])
+  // }, [])
 
 
   const submit_btn=()=>{
@@ -104,6 +104,7 @@ function Enterpage() {
       if(result.flag){
 
            setflag(false)
+           Socket.emit("doc_login", { name: "doctor" })
     
           }else if(result.err){
 

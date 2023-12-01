@@ -10,6 +10,8 @@ import { BsArrowReturnLeft } from "react-icons/bs";
 import Swal from 'sweetalert2'
 import { error } from 'console'
 import { useNavigate } from 'react-router-dom' 
+import axios from "../../../Constant/Axiospage"
+import {message} from "antd"
 
 
 function Levepage() {
@@ -39,7 +41,27 @@ function Levepage() {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
 
-                navigate("/enterpage")
+                axios.post("/manage/video_call_control").then((respo)=>{
+
+                        const result=respo.data
+                        if(result.flag){
+
+                            navigate("/enterpage")
+
+                        }else{
+
+                              message.error("server err")
+                        }
+                }).catch(err=>{
+
+                    message.error("somthing worng ")
+
+                      
+                })
+                
+
+
+               
             
             } else if (result.isDenied) {
                
