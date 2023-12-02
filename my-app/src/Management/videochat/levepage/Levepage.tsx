@@ -24,7 +24,7 @@ function Levepage() {
 
         if (flag) {
 
-            window.location.reload()
+            // window.location.reload()
 
             setflag(false)
         }

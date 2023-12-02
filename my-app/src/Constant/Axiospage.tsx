@@ -6,7 +6,6 @@ import axios from "axios" ;
 // "https://lifecarebackend-439a.onrender.com"
 
 const baseUrl="https://lifecarebackend-439a.onrender.com"
-
    const instans=axios.create({
 
     baseURL:baseUrl

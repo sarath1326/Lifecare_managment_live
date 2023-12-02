@@ -135,7 +135,7 @@
 
      margin-top: 150px;
 
-     margin-left: 110px;
+     margin-left: 130px;
 }
 
 
@@ -144,6 +144,11 @@
       color: white;
       margin-top: 150px;
       margin-left: 80px;
+}
+
+.new-add-loding{
+
+    margin-left: 55px;
 }
 
 .mange-op-view{
