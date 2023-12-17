@@ -17,6 +17,7 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { message } from "antd"
 import { useNavigate } from 'react-router-dom';
 import { FaRegClock } from "react-icons/fa";
+import { RxCross1 } from "react-icons/rx";
 
 
 
@@ -62,8 +63,10 @@ function OPmanage() {
     const [empty, setempty] = useState<boolean>(false)
     const [viewbox, setviewbox] = useState<boolean>(false)
     const [single, setsingle] = useState<fetchdataType>()
-    const [input, setinput] = useState<number>()
+    const [input, setinput] = useState<any>("")
     const [color, setcolor] = useState<string>("1px solid red")
+    const [searchflag,setsearchflag]=useState<boolean>(true)
+  
 
 
 
@@ -91,6 +94,7 @@ function OPmanage() {
 
                     setgetdata(result.data)
                     setspinner(false)
+                    console.log(result.data)
 
                 }
 
@@ -138,6 +142,9 @@ function OPmanage() {
 
     const searchbtn = () => {
 
+      if(input){
+
+        setsearchflag(false)
         const res = getdata.find((obj) => obj.bookingid === input || obj.mobile.includes(input))
 
         if (res) {
@@ -152,6 +159,16 @@ function OPmanage() {
             message.error("No Result Found ")
 
         }
+     
+    
+    }else{
+
+    message.error("input is empty !")
+
+     }
+
+       
+          
     }
 
     // user marking 
@@ -295,7 +312,7 @@ function OPmanage() {
 
                         <input className='mang-op-search-input'
 
-                            placeholder='Booking ID  OR Mobile number Enter and Search '
+                            placeholder='Booking ID  or Mobile Number Enter and Search '
 
                             type='text'
                             onChange={(
@@ -306,10 +323,29 @@ function OPmanage() {
                                 );
                             }}
 
+                            // onChange={(e:any)=>{setinput(e.target.value)}}
+                            
+                            value={input}
+
+                          
 
                         />
 
-                        <button onClick={searchbtn} className='mang-op-serch-btn'>  <BsSearch />  </button>
+                        {
+
+                            searchflag ?
+
+                            <button onClick={searchbtn} className='mang-op-serch-btn'>   <BsSearch />    </button>
+
+                            :
+
+                            <button onClick={()=>{ setinput("") ; setsearchflag(true)    }} className='mang-op-serch-btn'>   <RxCross1 />     </button>
+
+
+
+                        }
+
+                       
 
 
 
@@ -454,7 +490,7 @@ function OPmanage() {
 
                                         <span> Booking ID :    </span><br />
 
-                                        <span className='pyment-span' > Patent Name :    </span><br />
+                                        <span className='pyment-span' > Patient Name :    </span><br />
 
                                         <span> Age :    </span><br />
 
